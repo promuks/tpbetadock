@@ -1,0 +1,578 @@
+<div class="modal-header  bg-inverse">
+    <h3 class="modal-title">Extended Search Criteria</h3>
+</div>
+<form name="modalForm" xt-form role="form" focus-error="true" strategy="customStrategy"  novalidate>
+<div class="modal-body bg-default">
+
+  <div class="row" style="padding-top:10px;">
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Fare Class</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval1" class="onoffswitch-checkbox" id="start_interval1" type="checkbox"  ng-model="search.fareClassesOperand">
+            <label class="onoffswitch-label" for="start_interval1" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" ng-model="search.fareClasses" placeholder="Fare Class" type="text">
+      </div>
+    </div> <!-- end fareClasses -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Base Fare Amount</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+            <select ng-model="search.baseFareAmountOperand" class="select-custom"
+                    ng-options="optionName.name for optionName in search.equalityChoice track by optionName.value">
+            </select>
+        </span>
+        <input class="form-control" placeholder="Base Fare Amount" type="text" ng-model="search.baseFareAmount">
+      </div>
+    </div> <!-- end basefareAmount -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Currency</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval3" class="onoffswitch-checkbox"  id="start_interval3"  type="checkbox" ng-model="search.currencyOperand">
+            <label class="onoffswitch-label" for="start_interval3"  >
+              <span class="onoffswitch-inner" data-swchon-text="="
+                    data-swchoff-text='&#8800;'></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="Currency" type="text" ng-model="search.currency">
+      </div>
+    </div><!-- end currency -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>OWRT</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-transfer"></i>
+        </span>
+        <input type="text" class="form-control" ng-model='search.owrt' placeholder="OWRT"/>
+      </div>
+    </div><!-- end owrt -->
+  </div> <!-- edn row -->
+
+
+  <div class="row" style="padding-top:10px;">
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>FTC</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval5" class="onoffswitch-checkbox"  id="start_interval5"  type="checkbox" ng-model="search.ftcOperand">
+            <label class="onoffswitch-label" for="start_interval5" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="FTC" type="text" ng-model='search.ftc' >
+
+      </div>
+    </div> <!-- end basefareAmount -->
+
+    <div class="col-md-3 form-group"  style="margin-left:0px;">
+      <div class="label label-default">
+        <label>PTC</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval6" class="onoffswitch-checkbox"   id="start_interval6"  type="checkbox" ng-model="search.ptcOperand">
+            <label class="onoffswitch-label" for="start_interval6" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="PTC" type="text" ng-model="search.ptc">
+      </div>
+    </div><!-- End PTC -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Footnote</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval7" class="onoffswitch-checkbox"  id="start_interval7"  type="checkbox" ng-model="search.footnoteOperand">
+            <label class="onoffswitch-label" for="start_interval7" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="Footnote" type="text" ng-model="search.footnote">
+      </div>
+    </div> <!-- end footnote -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>AP</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval8" class="onoffswitch-checkbox"  id="start_interval8"  type="checkbox" ng-model="search.apOperand">
+            <label class="onoffswitch-label" for="start_interval8" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="AP" type="text" ng-model="search.ap">
+      </div>
+    </div> <!-- end AP -->
+  </div> <!-- End Row 2 -->
+
+  <div class="row" style="padding-top:10px;">
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>MIN</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval5" class="onoffswitch-checkbox"  id="start_interval9"  type="checkbox" ng-model="search.minOperand">
+            <label class="onoffswitch-label" for="start_interval9" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="MIN" type="text" ng-model="search.min">
+      </div>
+    </div><!-- end Min -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>MAX</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval10"
+                     type="checkbox" ng-model="search.maxOperand">
+              <label class="onoffswitch-label" for="start_interval10">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="MAX" type="text" ng-model="search.max">
+      </div>
+    </div> <!-- end Max -->
+
+    <div class="col-md-3">
+      <div class="label label-default">
+        <label>Non Refundable</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="fa fa-undo"></i>
+        </span>
+        <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                ng-model="search.nonRefundable"
+                ng-options="optionName.name for optionName in search.nrOptions track by optionName.value">
+        </select>
+
+      </div>
+    </div> <!-- end non refundable -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Rule</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval8" class="onoffswitch-checkbox"  id="start_interval12"  type="checkbox" ng-model="search.ruleOperand">
+            <label class="onoffswitch-label" for="start_interval12" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="Rule" type="text" ng-model="search.rule">
+      </div>
+    </div> <!-- end rule -->
+
+  </div> <!-- edn row 3-->
+
+  <div class="row" style="padding-top:10px;">
+
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Routing</label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="onoffswitch">
+            <input name="start_interval5" class="onoffswitch-checkbox"  id="start_interval14"  type="checkbox" ng-model="search.routingOperand">
+            <label class="onoffswitch-label" for="start_interval14" >
+              <span class="onoffswitch-inner" data-swchon-text="(=)"
+                    data-swchoff-text="(!=)"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </span>
+        </span>
+        <input class="form-control" placeholder="Routing" type="text" ng-model="search.routing">
+      </div>
+    </div>
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>GI</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval15"
+                     type="checkbox" ng-model="search.giOperand">
+              <label class="onoffswitch-label" for="start_interval15">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="GI" type="text" ng-model="search.gi">
+      </div>
+    </div> <!-- end gi -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>Tariff</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval16"
+                     type="checkbox" ng-model="search.tariffOperand">
+              <label class="onoffswitch-label" for="start_interval16">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="Tariff" type="text" ng-model="search.tariff">
+      </div>
+    </div> <!-- end Tariff -->
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>RBD</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval17"
+                     type="checkbox" ng-model="search.rbdOperand">
+              <label class="onoffswitch-label" for="start_interval17">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="RBD" type="text" ng-model="search.rbd">
+      </div>
+    </div><!-- end rbd -->
+
+
+
+
+  </div>  <!-- end row 4 -->
+  <div class="row" style="padding-top:10px;">
+
+
+  <div class="col-md-3 form-group" style="margin-left:0px;">
+    <div class="label label-default">
+      <label>ACCT</label>
+    </div>
+    <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval18"
+                     type="checkbox" ng-model="search.acctOperand">
+              <label class="onoffswitch-label" for="start_interval18">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+      <input class="form-control" placeholder="ACCT"  xt-validation-tooltip
+             name="acct" acct-required type="text" ng-model="search.acct">
+  </div>
+  </div>
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>TKTD</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval19"
+                     type="checkbox" ng-model="search.tktdOperand">
+              <label class="onoffswitch-label" for="start_interval19">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="TKTD" type="text" ng-model="search.tktd">
+      </div>
+    </div>
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>TC</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval20"
+                     type="checkbox" ng-model="search.tcOperand">
+              <label class="onoffswitch-label" for="start_interval20">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="TC" type="text" ng-model="search.tc">
+      </div>
+    </div>
+
+    <div class="col-md-3 form-group" style="margin-left:0px;">
+      <div class="label label-default">
+        <label>WebSource</label>
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon">
+            <span class="onoffswitch">
+              <input name="start_interval5" class="onoffswitch-checkbox" id="start_interval21"
+                     type="checkbox" ng-model="search.webSourceOperand">
+              <label class="onoffswitch-label" for="start_interval21">
+                <span class="onoffswitch-inner" data-swchon-text="(=)"
+                      data-swchoff-text="(!=)"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </span>
+          </span>
+        <input class="form-control" placeholder="WebSource" type="text" ng-model="search.webSource">
+      </div>
+    </div>
+
+</div> <!-- end row 5 -->
+  <div class="row">
+
+    <div class="col-md-8" >
+      <div class="label label-default">
+        <label>Indicators</label>
+      </div>
+      <div class="container form-control">
+        <div>
+
+          <label class="checkbox-inline">
+            <input type="checkbox" class="checkbox style-0" ng-model="search.day">
+            <span>DAY</span>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="checkbox style-0"  ng-model="search.seasonality">
+            <span>SEA</span>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="checkbox style-0" ng-model="search.flightApplication">
+            <span>FLT</span>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="checkbox style-0" ng-model="search.stopOver">
+            <span>STP</span>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="checkbox style-0" ng-model="search.surcharge">
+            <span>SUR</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end row 6 -->
+
+<!--
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <div class="form-inline">
+
+        <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                ng-model="search.fareClassesOperand"
+                ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+        </select>
+
+        <div class="form-group inner-addon left-addon">
+          <i class="fa fa-plane"></i>
+          <input type="text" class="form-control" ng-model='search.fareClasses' size=6
+                 placeholder="Fare Class">
+        </div>
+        <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                ng-model="search.baseFareAmountOperand"
+                ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+        </select>
+
+        <div class="form-group inner-addon left-addon">
+          <i class="fa fa-plane"></i>
+          <input type="text" class="form-control" ng-model='search.baseFareAmount' size=9
+                 placeholder="Base Fare AMT">
+        </div>
+        <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                ng-model="search.currencyOperand"
+                ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+        </select>
+
+        <div class="form-group inner-addon left-addon">
+          <i class="fa fa-plane"></i>
+          <input type="text" class="form-control" ng-model='search.currency' size=6
+                 placeholder="CUR">
+        </div>
+        <div class="form-group inner-addon left-addon">
+          <i class="fa fa-plane"></i>
+          <input type="text" class="form-control" ng-model='search.owrt' size=2
+                 placeholder="O-R">
+        </div>
+        <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                ng-model="search.ftcOperand"
+                ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+        </select>
+
+        <div class="form-group inner-addon left-addon">
+          <i class="fa fa-plane"></i>
+          <input type="text" class="form-control" ng-model='search.ftc' size=6
+                 placeholder="FTC">
+        </div>
+        <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                ng-model="search.ptcOperand"
+                ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+        </select>
+
+        <div class="form-group inner-addon left-addon">
+          <i class="fa fa-plane"></i>
+          <input type="text" class="form-control" ng-model='search.ptc' size=6
+                 placeholder="PTC">
+        </div>
+      </div>
+    </div>
+  </div>
+<br/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-inline">
+                <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                        ng-model="search.footnoteOperand"
+                        ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+                </select>
+
+                <div class="form-group inner-addon left-addon">
+                    <i class="fa fa-plane"></i>
+                    <input type="text" class="form-control" ng-model='search.footnote' size=6
+                           placeholder="FN">
+                </div>
+                <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                        ng-model="search.apOperand"
+                        ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+                </select>
+
+                <div class="form-group inner-addon left-addon">
+                    <i class="fa fa-plane"></i>
+                    <input type="text" class="form-control" ng-model='search.ap' size=9
+                           placeholder="AP">
+                </div>
+                <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                        ng-model="search.minOperand"
+                        ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+                </select>
+                <div class="form-group inner-addon left-addon">
+                    <i class="fa fa-plane"></i>
+                    <input type="text" class="form-control" ng-model='search.min' size=6
+                           placeholder="MIN">
+                </div>
+                <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                        ng-model="search.maxOperand"
+                        ng-options="optionName.name for optionName in search.equalsNotEquals track by optionName.value">
+                </select>
+                <div class="form-group inner-addon left-addon">
+                    <i class="fa fa-plane"></i>
+                    <input type="text" class="form-control" ng-model='search.max' size=2
+                           placeholder="MAX">
+                </div>
+                <label class="checkbox">
+                    DAY  <input type="checkbox" ng-model="search.day">
+                </label>
+                <label class="checkbox">
+                    SEA  <input type="checkbox" ng-model="search.seasonality">
+                </label>
+                <label class="checkbox">
+                    FLT  <input type="checkbox" ng-model="search.flightApplication">
+                </label>
+                <label class="checkbox">
+                    STP  <input type="checkbox" ng-model="search.stopOver">
+                </label>
+                <label class="checkbox">
+                    SUR  <input type="checkbox" ng-model="search.surcharge">
+                </label>
+&lt;!&ndash;                <select ng-style="{'width': getMaxLength() + 'px'}" class="form-control"
+                        ng-model="search.aNR"
+                        ng-options="optionName.name for optionName in search.nrOptions track by optionName.value">
+                </select>&ndash;&gt;
+
+            </div>
+        </div>
+    </div>
+
+    <br/>
+-->
+
+</div>
+</form>
+<div class="modal-footer  bg-primary">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+</div>

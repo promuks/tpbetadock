@@ -1,0 +1,80 @@
+<!-- PLACE YOUR LOGO HERE -->
+<!--<h3>
+  <img src="assets/images/logo.png">
+          <span>
+          Total Price
+      </span>
+</h3>-->
+<div class="headerBlock navbar navbar-fixed-top " id="headertemplate" >
+
+  <div class="navbar-inner">
+
+    <ul class="nav nav-pills header" style="padding-left:10px">
+
+      <li>
+
+        <a style="padding:5px 5px" href="http://www.atpco.net"><img src="assets/images/ATPCO_logo_75x25.png"/></a>
+
+      </li>
+
+      <li >
+
+        <a class="link-color" id="taxcalculatorheader" style="font-size:20px;">Total Price Beta</a>
+
+      </li>
+
+      <li style="float: right; clear: right;padding-right:10px">
+
+        <ul class="nav nav-tabs header">
+
+          <li ng-show="hdr.userId">
+
+            <a class="link-color">
+
+              <span style="padding-right: 5px" title="{{hdr.userId}}" data-placement="bottom" data-toggle="tooltip" class="glyphicon glyphicon-user cursor-pointer" id="loginuser"></span>
+
+              <span class="text-uppercase ng-binding" style="padding-right: 5px" id="logintime">{{hdr.dateTime| date : 'ddMMMyyyy HH:mm': EDT}}</span>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a id="dropdownmenu" data-toggle="dropdown" aria-expanded="false" class="dropdown dropdown-toggle" href="">
+
+										<span>
+
+											<i class="glyphicon glyphicon-list"></i>
+
+										</span>
+
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+
+              <li>
+
+                <a id="helpmenu" href="/fmhelp/WebHelp/FareManager.htm" target="_blank">Help</a>
+
+              </li>
+
+              <li>
+
+                <a id="contactmenu" href="/fmhome/jsp/ContactPage.htm" target="_blank">Contact</a>
+
+              </li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>

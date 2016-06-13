@@ -1,0 +1,48 @@
+<!--<div class="row">-->
+	<div class="message-container" id="errorMessageContainer">
+		<!-- Error messages -->
+		<div class="panel panel-danger" role="alert" ng-show="vm.messageService.errorMessages.length > 0">
+			<div class="panel-heading">
+				<h5 class="panel-title message-header">
+					<a data-toggle="collapse" data-target="#errorMessageBody">
+						<div class="glyphicon glyphicon-exclamation-sign pull-left message-symbol"></div>
+						  Errors
+					</a>
+				</h5>
+
+			</div>
+			<div class="panel-collapse  collapse in" id="inputError">
+				<div class="panel-body error-message-body">
+					<div ng-repeat="errorMessage in vm.messageService.errorMessages">
+						<div class="help-block">{{errorMessage.message}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Warning messages -->
+		<div class="panel panel-warning" role="alert" ng-show="vms.messageService.warningMessages.length > 0">
+			<div class="panel-heading">
+				<h5 class="panel-title message-header">
+					<a data-toggle="collapse" data-target="#warningMessageBody">
+						<div class="glyphicon glyphicon-exclamation-sign pull-left message-symbol"></div>
+						Warnings
+					</a>
+					<div class="glyphicon glyphicon-remove pull-right cursor-pointer" style="padding-right:10px;" ng-click="hideMessage('Warning')"></div>
+				</h5>
+
+			</div>
+			<div class="panel-collapse  collapse in" id="warningMessageBody">
+				<div class="panel-body warning-message-body">
+					<div ng-repeat="errorMessage in vm.messageService.warningMessages" class="message-block">
+						<div>{{errorMessage.message}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--</div>-->
+
+

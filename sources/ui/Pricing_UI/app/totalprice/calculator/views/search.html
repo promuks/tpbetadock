@@ -1,0 +1,143 @@
+
+<div class="container-fluid">
+<div cg-busy="vms.pleaseWaitLoad" class="cg-busy-loading-container">
+  <div ui-view>
+  <div id="messagesContainer" class="accordion-container" ng-controller="CalculatorSearchController as vm" ng-include="'totalprice/calculator/views/messagesTemplate.html'">
+  </div>
+  </div>
+    <div id="search">
+      <form name="searchForm" role="form" focus-error="true" xt-form strategy="customStrategy"  novalidate>
+
+        <!-- Main Row :START -->
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-3">
+            <div class="form-group  field required" >
+              <label   class="show-hide">OW/RT</label>
+                  <div
+                    isteven-multi-select
+                    input-model="vms.owrtOptions"
+                    output-model="vms.tpcRequest.oneWay"
+                    button-label="label"
+                    item-label="label"
+                    helper-elements=""
+                    tick-property="selected"
+                    selection-mode="single"
+                    >
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group inner-addon right-addon field required">
+              <label class="show-hide">First Travel</label>
+              <i class="fa fa-calendar"></i>
+              <input type="text" data-date-format="ddMy" form-name="searchForm" name="First Travel Date"
+                     class="form-control datepicker" xt-validation-tooltip required message="First Travel"  pattern="^(\d){2}[A-Za-z]{3}(\d){2}$"
+                     smart-datepicker ng-model="vms.tpcRequest.travelDateStr"  dt-greater-than my-msg="Today's Date" tabindex="2">
+            </div>
+          </div>
+
+          <div class="col-md-3">
+
+            <div class="form-group<!-- inner-addon right-addon--> field required">
+              <label class="show-hide">Travel Duration</label>
+              <!--<i class="fa fa-rocket"></i>-->
+              <input type="text" class="form-control" ng-model="vms.tpcRequest.travelDuration"
+                     maxlength="2" xt-validation-tooltip required travel="Duration" numbers-only="numbers-only" name="Travel Duration" capitalize tabindex="3">
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group <!--inner-addon right-addon--> field required">
+              <label  class="show-hide">Shopper Duration</label>
+              <!--<i class="fa fa-shopping-cart"></i>-->
+              <input type="text" class="form-control" ng-model="vms.tpcRequest.shopperDuration"
+                      maxlength="3" xt-validation-tooltip required numbers-only="numbers-only"
+                      pattern="^0*([1-9][0-9]?|1[0-7][0-9]|180)$"
+                      msg-pattern="Please enter a Shopper Duration between 1 and to 180 days"
+                      name="Shopper Duration" capitalize tabindex="4">
+            </div>
+          </div>
+
+        </div>
+        <!-- Main Row :END -->
+
+
+        <!-- Extended Search: START -->
+        <div ng-repeat="search in vms.tpcRequest.subRequests"  style="margin-left: 0px; padding: 0">
+           <ng-form novalidate name="extendForm_{{$index}}">
+            <div class="row">
+              <div class="col-md-2">
+                 <div style="margin-top:15px;" mass-autocomplete>
+                  <div class="form-group <!--inner-addon right-addon--> field required">
+                    <label   class="show-hide">Origin</label>
+                    <!--<i class="fa fa-crosshairs"></i>-->
+                    <input type="text" class="form-control" ng-model="search.origin"
+                            maxlength="3" xt-validation-tooltip required  name="Origin" capitalize lookup="cities" mass-autocomplete-item tabindex="{{($index+5)}}" init-focus>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div style="margin-top:15px;" mass-autocomplete>
+                  <div class="form-group field required">
+                    <label  class="show-hide">Destination</label>
+                    <!--<i class="fa fa-map-marker"></i>-->
+                    <input type="text" name="Destination" class="form-control" ng-model='search.destination'
+                           required maxlength="3" xt-validation-tooltip capitalize lookup="cities" mass-autocomplete-item tabindex="{{($index+5)}}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div style="margin-top:15px;" mass-autocomplete>
+                  <div style="padding-bottom: 0;" class="form-group <!--inner-addon right-addon--> field required">
+                    <label  class="show-hide">Carrier</label>
+                    <!--<i class="fa fa-plane"></i>-->
+                    <input type="text" class="form-control" id="cc" name="Carrier"
+                           ng-model='search.carrier'
+                            maxlength="3" required xt-validation-tooltip capitalize lookup="carriers" mass-autocomplete-item tabindex="{{($index+5)}}" >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div style="margin-top:15px;" >
+                  <div style="padding-bottom: 0;" class="form-group <!--inner-addon right-addon--> field">
+                    <label class="show-hide">Fare Class</label>
+                    <!--<i class="fa fa-plane"></i>-->
+                    <input type="text" class="form-control" name="fareClasses_{{$index}}" ng-model='search.fareClasses'
+                           xt-validation-tooltip maxlength="256" fareclass-only pattern="[a-zA-Z0-9,-]*" msg-pattern="Valid entries are alphanumeric, comma, and hyphen"
+                           capitalize tabindex="{{($index+5)}}">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 custom-tip" style="margin-top: 20px">
+                <a href="" ng-click="vms.addSearchRow()" class="btn btn-xs btn-primary btn-circle" tabindex="{{($index+5)}}">
+                  <i class="glyphicon glyphicon-plus" data-placement="bottom" tooltip title="Add Markets"></i>
+                </a>
+                <a href="" ng-click="vms.copySearchRow(search)" class="btn btn-xs btn-primary btn-circle" tabindex="{{($index+5)}}">
+                  <i class="glyphicon glyphicon-copy" data-placement="bottom" tooltip title="Copy Markets"></i>
+                </a>
+                <a href="" ng-show="vms.tpcRequest.subRequests.length>1" ng-click="vms.deleteSearchRow($index)" class="btn btn-xs btn-primary btn-circle"><i class="glyphicon glyphicon-remove" data-placement="bottom" tooltip title="Remove Markets" tabindex="{{($index+5)}}"></i></a>
+              </div>
+            </div> <!-- end Labels Row -->
+          </ng-form>
+        </div>
+        <!-- Extended Search: END -->
+
+        <!-- submit button:START -->
+        <div>
+          <button ng-disabled="searchForm.$invalid" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="vms.logSelection('root.tpcalc.result')">Search
+          </button>
+
+        </div>
+        <!-- submit button:END -->
+        <br/>
+
+
+      </form>
+    </div><!-- end ng-controller-->
+  </div>
+
+</div>

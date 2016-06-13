@@ -1,0 +1,37 @@
+<div  style="margin-left: 15px"><!-- start main wrapper for websockets demo-->
+<h3 class="page-title txt-color-blueDark"> Websockets Demo </h3>
+<div id="search" >
+  <form name="searchForm" role="form" focus-error="true" ng-submit="submitSearch(searchForm)">
+
+    <!-- Main Row :START -->
+    <div class="row">
+
+
+    <div class="col-md-2">
+        <div style="margin-top:15px;" >
+          <div class="form-group inner-addon right-addon field">
+            <label ng-show="destination" class="show-hide">Name</label>
+            <i class="fa fa-map-marker"></i>
+            <input type="text" name="destination" class="form-control" ng-model='destination'
+                   placeholder="Destination" >
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+
+    <!-- submit button:START -->
+    <div>
+      <button type="submit" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="submitted=true">Get Data
+      </button>
+    </div>
+    <!-- submit button:END -->
+
+<div  ng-show="msgFromServer">
+  {{msgFromServer}}
+</div>
+  </form>
+</div><!-- end ng-controller-->
+</div><!-- end main wrapper for websockets demo-->

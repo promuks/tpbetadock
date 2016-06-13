@@ -1,0 +1,211 @@
+'use strict';
+(function () {
+
+  angular.module('app.totalprice.calculator').controller('CalculatorController', CalculatorController);
+
+  CalculatorController.$inject = ['$scope','$filter', 'TpcRequest', 'TpcCriteria', 'TpcDataService', 'TpcGraphService', 'TpcGraphFilters','MarketViewJSONService','owrtOptions'];
+
+  function CalculatorController($scope,$filter, TpcRequest, TpcCriteria, TpcDataService, TpcGraphService, TpcGraphFilters,MarketViewJSONService,owrtOptions) {
+
+    /*jshint validthis: true */
+    var vm = this;
+/*    vm.owrtOptions=owrtOptions;*/
+    vm.showDailyGraph = showDailyGraph;
+    vm.serviceCallBack = serviceCallBack;
+
+    vm.submittedRequest = {showDailyGraph:false};
+    vm.fareDataMessage= 'this is initial message',
+      vm.jsonData = null;
+    vm.init = init;
+    vm.addSearchRow = addSearchRow;
+    vm.deleteSearchRow = deleteSearchRow;
+    vm.submitSearch = submitSearch;
+    vm.reflow = reflow;
+    vm.getFareData = getFareData;
+    vm.goToCustomGraph = goToCustomGraph;
+    var onCustomGraphFailure = onCustomGraphFailure;
+
+    vm.init();
+    TpcGraphService.setServiceCallBack(vm.serviceCallBack);
+
+
+    function init() {
+      vm.tpcRequest = new TpcRequest();
+      vm.tpcRequest.load();
+      vm.tpcRequest.effectiveDate = $filter('date')(new Date(), 'ddMMMyy');
+    };
+
+    function showDailyGraph(){
+      return TpcGraphService.getShowDailyGraph();
+    }
+    function serviceCallBack(){
+      $scope.$apply();
+    };
+
+    function addSearchRow() {
+      if (vm.tpcRequest.tpcSubRequests.length < 5) {
+        var newSearchCritria = new TpcCriteria();
+        vm.tpcRequest.tpcSubRequests.push(newSearchCritria);
+      }
+    };
+
+   function  deleteSearchRow(index) {
+      if (vm.tpcRequest.tpcSubRequests.length !== 1) {
+        vm.tpcRequest.tpcSubRequests.splice(index, 1);
+      }
+    };
+
+    vm.updateGraph = function (){
+      vm.summaryChartConfig.series = TpcGraphService.generateGraphSeriesData(vm.jsonData,vm.tpcGraphFilters,TpcDataService.getTimeStamp(vm.tpcRequest.effectiveDate));
+    };
+
+    function submitSearch (searchForm) {
+      console.log(vm.tpcRequest.owrt);
+      vm.tpcGraphFilters = new TpcGraphFilters(vm.tpcRequest.tpcSubRequests);
+      vm.tpcGraphFilters.load();
+      if (searchForm.$invalid) {
+        searchForm.$submitted = true;
+        //return;
+      }
+      var promise = TpcDataService.tpsGraphData("Test-4-Charts");
+      promise.then(onSuccess, onFailure);
+    };
+
+    function getFareData (searchForm) {
+      vm.fareDataMessage= 'this is faredata submitted message';
+    };
+
+
+    vm.daysChartConfig = {
+      options:TpcGraphService.getDailyGraphOption(),
+      series: TpcGraphService.getDailyGraphSeries(),
+      loading: false,
+      size: {
+        width: 1000,
+        height: 320
+      }
+    }
+
+    function reflow () {
+      vm.$broadcast('highchartsng.reflow');
+    };
+
+    // Call get data
+    function onFailure(response) {
+      vm.error.isError = true;
+      var errorMessage = 'Oops! There was a problem. Please contact ATPCO Support.';
+      if (response.data && response.data.systemMessage) {
+        errorMessage = response.data.systemMessage;
+      }
+      vm.error.message = errorMessage;
+    };
+
+    function onSuccess(response) {
+      //  $log.info('data: ' + response.data);
+      Highcharts.createElement('link', {
+        href: '//fonts.googleapis.com/css?family=Unica+One',
+        rel: 'stylesheet',
+        type: 'text/css'
+      }, null, document.getElementsByTagName('head')[0]);
+
+      vm.jsonData = response.data;
+      var fromDate = TpcDataService.getTimeStamp(vm.tpcRequest.effectiveDate);
+      vm.summaryChartConfig = {
+        options:TpcGraphService.getSummaryGraphOptions(),
+        series: TpcGraphService.generateGraphSeriesData(vm.jsonData,vm.tpcGraphFilters,fromDate),
+        loading: false,
+        func: function(chart) {
+          var toDate = fromDate + 86400000 * 33;
+          chart.xAxis[0].setExtremes(fromDate,toDate);
+          chart.showResetZoom();
+        }
+      }
+
+    };
+
+
+    function goToCustomGraph(searchForm) {
+
+      vm.tpcGraphFilters = new TpcGraphFilters(vm.tpcRequest.tpcSubRequests);
+      vm.tpcGraphFilters.load();
+      MarketViewJSONService.query().$promise.then(onCustomGraphSuccess, onCustomGraphFailure);
+    }
+
+    function onCustomGraphSuccess (response) {
+      //get the bin get data service response
+      vm.tpcalcDataResponse = response;
+
+      vm.calcData = vm.tpcalcDataResponse;
+      if (vm.calcData != null && vm.calcData.length > 0) {
+        //remove the grid from the page
+        var treeGrid = Grids['tpCalcGrid'];
+        if (treeGrid != null) {
+          treeGrid.Dispose();
+        }
+        //modify the bin data to the JSON format that the grid requires
+        vm.gridData = function () {
+
+          //convert the Service JSON data to the format that the grid needs
+          var bodyResponse = {Body: [[]]};
+          for (var i = 0; i < vm.calcData.length; ++i) {
+            var seq = vm.calcData[i];
+            var ejsGridItem = angular.copy(seq);
+            ejsGridItem.Def = 'Node';
+            ejsGridItem.Expanded = 0;
+            bodyResponse.Body[0].push(ejsGridItem);
+          }
+          return bodyResponse;
+        }
+
+        vm.gridData2 = function () {
+
+          //convert the Service JSON data to the format that the grid needs
+          var bodyResponse = {Body: [[]]};
+          var ejsGridItem = angular.copy(bodyResponse);
+          ejsGridItem.Def = 'Node';
+          ejsGridItem.Expanded = 0;
+          bodyResponse.Body[0].push(ejsGridItem);
+          return bodyResponse;
+        }
+        //create new grid with new data
+        var D = new TDataIO();
+        D.Layout.Url = "/totalprice/calculator/config/tpCalcResultGridDef.xml";
+        D.Data.Data = vm.gridData();
+        TreeGrid(D, "tpCalcGrid");
+
+        var D1 = new TDataIO();
+        D1.Layout.Url = "/totalprice/calculator/config/tpCalcResultGridSelectedDef.xml";
+        D1.Data.Data = vm.gridData2();
+        TreeGrid(D1, "grid2");
+
+      }
+    }
+
+
+
+    function moveRows(){
+      var grid = Grids['tpCalcGrid'];
+      moveRowsFromSourceToTarget(grid);
+    }
+
+
+
+    function onCustomGraphFailure(data) {
+      //if the response status is 400 then handle the error messages
+      var errorMessage = "An error occurred while processing . Please try again later.";
+      //show the error messages on the screen
+      vm.error.errorMessage=errorMessage;
+      vm.isError=true;
+    }
+
+  }
+
+
+
+  angular.module('app.totalprice.calculator').factory('MarketViewJSONService', ['$resource',
+    function($resource){
+      //return $resource("/assets/pricing.json");
+      return $resource("/assets/fcData.json");
+    }])
+
+})();

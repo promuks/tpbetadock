@@ -1,0 +1,133 @@
+<div  class="container-fluid" >
+
+  <div id="search">
+    <div class="download">
+
+      <span class="btn btn-xs btn-primary" id="download-setting" ng-csv="vmg.getDownloadArray()" filename="{{vmg.getDownloadFileName()}}"
+           lazy-load="true" csv-column-order="vmg.getDownloadOrder()" csv-header="vmg.getHeader()"  ga-track-event="['Results Page', 'Clicked', 'Download']">
+        <i class="fa fa-download txt-color-white" tooltip data-placement="bottom" title="Download"></i>
+      </span>
+    </div>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="field form-group" style="margin-top: 15px">
+          <label ng-show="vmg.tpcGraphFilters.odcList" class="show-hide">Market</label>
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.odcOptions"
+            output-model="vmg.tpcGraphFilters.odcList"
+            button-label="label"
+            item-label="label"
+            tick-property="selected"
+            helper-elements=""
+            max-labels="1"
+            on-item-click="vmg.updateGraph()"
+            on-select-all="vmg.updateGraph()"
+            on-select-none="vmg.updateGraph()"
+            ga-track-event="['Results Page', 'Clicked', 'Market']"
+            >
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="field form-group" style="margin-top: 15px">
+          <label class="show-hide">Cabin</label>
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.cabinOptions"
+            output-model="vmg.tpcGraphFilters.cabinList"
+            button-label="label"
+            item-label="label"
+            helper-elements=""
+            tick-property="selected"
+            max-labels="1"
+            on-item-click="vmg.updateGraph()"
+            on-select-all="vmg.updateGraph()"
+            on-select-none="vmg.updateGraph()"
+            ga-track-event="['Results Page', 'Clicked', 'Cabin']"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="field form-group" style="margin-top: 15px">
+          <label ng-show="vmg.tpcGraphFilters.amounts" class="show-hide">Amount</label>
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.amountOptions"
+            output-model="vmg.tpcGraphFilters.amounts"
+            button-label="name"
+            item-label="name"
+            helper-elements=""
+            tick-property="selected"
+            selection-mode="single"
+            on-item-click="vmg.updateGraph()"
+            on-select-all="vmg.updateGraph()"
+            on-select-none="vmg.updateGraph()"
+            ga-track-event="['Results Page', 'Clicked', 'Amount']"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="field form-group" style="margin-top: 15px">
+          <label class="show-hide">Operation</label>
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.opOptions"
+            output-model="vmg.tpcGraphFilters.opList"
+            button-label="label"
+            item-label="label"
+            helper-elements=""
+            tick-property="selected"
+            max-labels="1"
+            on-item-click="vmg.updateGraph()"
+            on-select-all="vmg.updateGraph()"
+            on-select-none="vmg.updateGraph()"
+            ga-track-event="['Results Page', 'Clicked', 'Operation']"
+            >
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div  style="margin-top: 15px">
+<!--          <a ui-sref="root.tpcalc.gridresult" class="btn btn-w-md btn-gap-v btn-round btn-primary" >Download</span>
+          </a>-->
+          <a ui-sref="root.tpcalc.gridresult" class="btn btn-w-md btn-gap-v btn-round btn-primary" ga-track-event="['Results Page', 'Clicked', 'Select Fare Class']">Select Fare Class</span>
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+
+  </div><!-- end ng-controller-->
+</div>
+
+
+<div id='content-area'>
+  <div gridster="vmg.gridsterOptions" style="" >
+    <ul>
+      <li gridster-item="widget" ng-repeat="widget in vmg.summaryDashboardModel.widgets">
+        <div class="box" >
+          <div>
+            <h4 style="text-align:center; color: #fff; background-color: #286090; border-color: #204d74; margin-bottom: 0px; margin-top: 0px; font-size: 24px">
+              <span style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Helvetica, sans-serif;">{{ widget.name}}</span>
+            </h4>
+            <div class="box-header-btns pull-right">
+              <!--<a title="settings" ng-click="openSettings(widget)"><i class="glyphicon glyphicon-cog"></i></a>-->
+              <a title="Remove widget" ng-show="widget.allowDelete" ng-click="vmg.removeWidget(widget)"><i class="glyphicon glyphicon-remove"></i></a>
+            </div>
+          </div>
+          <div class="box-content" ng-include="widget.partial">
+        </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>

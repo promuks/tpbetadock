@@ -1,0 +1,1134 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 0px!important;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+/*  border-top: 1px solid #e5e5e5;*/
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+ .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Custom styles added */
+/* Footer */
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+/*  background-color: #222;*/
+  padding-top: 1px;
+  z-index: 906;
+}
+
+html {
+  overflow-y: hidden;
+}
+
+/* Header*/
+#header {
+  display: block;
+  height: 49px;
+  margin: 0;
+  padding: 0 13px 0 0;
+  background-color: #f3f3f3;
+  background-repeat: repeat-x;
+  position: relative;
+  z-index: 905;
+}
+.minified #left-panel, .minified nav>ul>li {
+  overflow: visible;
+}
+.minified #left-panel {
+  width: 45px;
+}
+#left-panel {
+  -webkit-transition: 250ms cubic-bezier(0.1,.57,.1,1);
+  transition: 250ms cubic-bezier(0.1,.57,.1,1);
+  -webkit-transform: translate(0px,0) translateZ(0px);
+}
+
+
+
+.minified nav ul>li>a {
+  padding: 10px 11px;
+  display: block;
+}
+.minified nav>ul>li, .minified nav>ul>li a {
+  position: relative;
+}
+
+.minified.fixed-navigation nav {
+  -webkit-overflow-scrolling: none;
+  overflow: visible;
+  height: auto;
+  padding-bottom: 0
+}
+
+.minified.fixed-navigation nav > ul {
+  overflow: visible;
+  padding-right: 0;
+  width: 100%
+}
+#logo-group *, .login-info, .login-info *, .minified .menu-item-parent {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box
+}
+
+.minified .inbox-badge {
+  border-radius: 50%;
+  font-size: 9px;
+  padding: 2px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #ED1C24;
+  min-width: 13px
+}
+
+.minifyme {
+  border-bottom: 1px solid #302F2F;
+  background: #454545;
+  color: #A8A8A8;
+  text-align: center;
+  padding: 0;
+  width: 36px;
+  height: 28px;
+  display: block;
+  position: absolute;
+  right: 0;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  margin-top: 7px;
+  font-size: 19px;
+  transition: all .1s linear 0s
+}
+
+.minifyme:hover {
+  background: #646464;
+  color: #E4E4E4;
+  right: 0;
+  width: 40px;
+  padding-right: 5px
+}
+
+.minified .minifyme {
+  right: 0;
+  color: #A8A8A8;
+  position: relative;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  height: 34px;
+  font-size: 23px
+}
+
+.minified .minifyme .fa:before {
+  content: "\f0a9"
+}
+
+.minified .login-info a i, .minified .login-info a span {
+  display: none
+}
+
+.minified .login-info span {
+  padding: 0 5px;
+  text-align: center
+}
+
+.minified .login-info img {
+  margin: -2px 0 0;
+  width: 30px
+}
+
+.minified .login-info {
+  height: 38px;
+  border-bottom: 1px solid #181818
+}
+
+.minified #left-panel {
+  width: 45px
+}
+
+.minified #main {
+  margin-left: 45px
+}
+
+.minified #left-panel, .minified nav > ul > li {
+  overflow: visible
+}
+
+.minified nav > ul > ul {
+  min-height: 100px !important;
+  max-height: 180px !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #ed1c24 !important
+}
+
+.minified nav > ul > li, .minified nav > ul > li a {
+  position: relative
+}
+
+.minified nav ul > li > a {
+  padding: 10px 11px;
+  display: block
+}
+
+.minified nav > ul > li > a .fa.fa-fw {
+  display: block;
+  width: auto;
+  text-align: center;
+  padding: 0
+}
+
+.minified nav > ul > li > a > i {
+  text-align: center;
+  margin: 0;
+  display: block
+}
+
+/*.minified nav > ul > li.active > a::before {
+  content: "\f0d9"
+}*/
+
+.minified nav ul ul li a {
+  padding-left: 14px
+}
+
+.minified nav ul ul li li a {
+  padding-left: 25px
+}
+
+.minified nav > ul ul li::before, .minified nav > ul > li > ul::before {
+  left: 12px
+}
+
+.minified nav > ul > li > a .menu-item-parent, .minified nav > ul > li > a > b {
+  display: none
+}
+
+.minified nav > ul > li > a > .menu-item-parent {
+  display: none;
+  position: absolute;
+  left: 40px;
+  top: -3px;
+  width: 186px;
+  height: 38px;
+  line-height: 38px;
+  background-color: #f5f5f5;
+  color: #333;
+  z-index: 3;
+  -webkit-box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, .2);
+  -moz-box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, .2);
+  box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, .2);
+  border-left: 1px solid #bfbfbf;
+  border-top: 1px solid #D8D4D4;
+  border-bottom: 1px solid #fff;
+  padding-left: 12px
+}
+
+.minified nav > ul > li > ul {
+  display: none !important;
+  position: absolute;
+  left: 40px;
+  width: 199px;
+  z-index: 5;
+  border: 1px solid #bfbfbf;
+  min-height: 180px;
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .2);
+  -moz-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .2);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .2);
+  background: #454545;
+  margin-top: -3px;
+  overflow: hidden
+}
+
+.minified nav ul > li > ul > li > ul {
+  position: relative;
+  left: 13px;
+  border: none;
+  margin-left: -12px;
+  width: 197px
+}
+
+.minified nav > ul > li:hover > a > .menu-item-parent, .minified nav > ul > li:hover > ul {
+  display: block !important
+}
+
+.minified nav > ul > li > ul > li {
+  background-color: rgba(69, 69, 69, .9)
+}
+
+.minified nav > ul > li > ul > li > ul > li {
+  background-color: #484B50
+}
+
+.minified nav > ul > li {
+  border-bottom: 1px solid #1A1817;
+  border-top: 1px solid #525151
+}
+
+.minified nav > ul > li > ul::before {
+  border-left: none
+}
+
+.minified nav > ul ul li::before {
+  border: none
+}
+
+.slimScrollDiv, .slimScrollDiv > :first-child {
+  overflow: hidden
+}
+
+.minified .slimScrollDiv, .minified .slimScrollDiv > :first-child {
+  overflow: visible !important
+}
+
+.minified .slimScrollBar, .minified .slimScrollRail {
+  display: none
+}
+
+.minified nav > ul > li > ul > li > a, .minified nav > ul > li > ul > li > ul > li > a {
+  padding-top: 7px;
+  padding-bottom: 7px
+}
+
+.minified nav > ul > li > ul > li > ul > li a {
+  padding-top: 6px;
+  padding-bottom: 6px
+}
+
+.minified nav ul ul ul ul li a {
+  padding-left: 45px
+}
+
+.minified nav ul ul ul ul ul li a {
+  padding-left: 62px
+}
+
+.minified nav ul ul ul ul ul ul li a {
+  padding-left: 82px
+}
+.hidden-menu .minifyme, .minified #hide-menu {
+  display: none
+}
+.minified .page-footer {
+  padding-left: 58px
+}
+.minified #left-panel {
+  left: 0
+}
+
+.menu-on-top #hide-menu, .menu-on-top #logout, .menu-on-top .minifyme {
+  display: none !important
+}
+
+
+.menu-on-top .menu-item-parent {
+  max-width: 72px;
+  min-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 13px
+}
+
+.menu-on-top .menu-item-parent + span {
+  float: none !important;
+  top: 5px;
+  right: 5px;
+  position: absolute
+}
+
+
+/**** hidden menu ***/
+
+.hidden-menu #left-panel {
+  left: -210px;
+  z-index: 903
+}
+
+.hidden-menu #main {
+  margin-left: 10px
+}
+
+.hidden-menu #left-panel:hover {
+  left: 0
+}
+
+.hidden-menu .minifyme, .minified #hide-menu {
+  display: none
+}
+
+.hidden-menu #hide-menu > :first-child > a {
+  background-color: #e8e8e8;
+  background-image: -moz-linear-gradient(top, #5a5a5a 0, #686868 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5a5a5a), color-stop(100%, #686868));
+  background-image: -webkit-linear-gradient(to bottom, #5a5a5a 0, #686868 100%);
+  background-image: -o-linear-gradient(to bottom, #5a5a5a 0, #686868 100%);
+  background-image: -ms-linear-gradient(to bottom, #5a5a5a 0, #686868 100%);
+  background-image: linear-gradient(to bottom, #5a5a5a 0, #686868 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5A5A5A', endColorstr='#686868', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .15);
+  box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .15);
+  color: #fff;
+  border-color: #494949
+}
+
+.full-screen #fullscreen > :first-child > a:active, .hidden-menu #hide-menu > :first-child > a:active {
+  -webkit-box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, .2);
+  box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, .2)
+}
+
+
+.hidden-menu .page-footer {
+  padding-left: 20px
+}
+
+
+.hidden-menu #hide-menu i {
+  color: #fff
+}
+
+#hide-menu i::before {
+  content: "\f0c9"
+}
+
+.hidden-menu #left-panel {
+  left: 0
+}
+
+.hidden-menu #main {
+  position: relative;
+  left: 210px
+}
+
+.hidden-menu.fixed-ribbon #ribbon {
+  left: 220px;
+  width: 100%
+}
+
+
+.hidden-menu #hide-menu i {
+  color: #fff
+}
+
+#hide-menu i::before {
+  content: "\f0c9"
+}
+
+.hidden-menu #left-panel {
+  left: 0
+}
+
+.hidden-menu #main {
+  position: relative;
+  left: 210px
+}
+
+.hidden-menu.fixed-ribbon #ribbon {
+  left: 220px;
+  width: 100%
+}
+
+
+.hidden-menu #hide-menu i {
+  color: #fff
+}
+
+#hide-menu i::before {
+  content: "\f0c9"
+}
+
+.hidden-menu #left-panel {
+  left: 0
+}
+
+.hidden-menu #main {
+  position: relative;
+  left: 210px
+}
+
+.hidden-menu.fixed-ribbon #ribbon {
+  left: 220px;
+  width: 100%
+}
+body.fixed-navigation.hidden-menu {
+  overflow: hidden !important
+}
+
+
+.hidden-menu #hide-menu i {
+  color: #fff
+}
+
+#hide-menu i::before {
+  content: "\f0c9"
+}
+
+.hidden-menu #left-panel {
+  left: 0
+}
+
+.hidden-menu #main {
+  position: relative;
+  left: 210px
+}
+
+.hidden-menu.fixed-ribbon #ribbon {
+  left: 220px;
+  width: 100%
+}
+
+
+#main {
+  margin-left: 220px;
+  padding: 0;
+  padding-bottom: 52px;
+  min-height: 500px;
+  position: relative;
+  overflow-y: auto;
+  height:638px;
+}
+
+
+/* START: Fields Input and dates */
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+.field > label {
+  position: absolute;
+  top: -14px;
+  color: #428bca;
+  font-size: 0.8em;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+/* END - Field input and dates*/
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: url(../images/greybg.png) #FDF9F9;
+  background-image: url(../images/greybg.png);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(253, 249, 249);
+  direction: ltr;
+}
+
+
+
+/*Datepicker*/
+
+.ui-datepicker {
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none
+}
+
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  border: 0;
+  font-weight: 700;
+  width: 100%;
+  padding: 4px 0;
+  background-color: #f5f5f5;
+  color: gray
+}
+
+.ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 2px
+}
+
+.ui-datepicker .ui-datepicker-next span, .ui-datepicker .ui-datepicker-prev span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px
+}
+
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center
+}
+
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0
+}
+
+.ui-datepicker select.ui-datepicker-month-year {
+  width: 100%
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+  width: 49%
+}
+
+.ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em
+}
+
+.ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  border: 0
+}
+
+.ui-datepicker td {
+  border: 0;
+  padding: 1px
+}
+
+.ui-datepicker td a, .ui-datepicker td span {
+  display: block;
+  padding: .2em;
+  text-align: right;
+  text-decoration: none
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em;
+  width: auto;
+  overflow: visible
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left
+}
+
+.ui-datepicker.ui-datepicker-multi {
+  width: auto
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em
+}
+
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%
+}
+
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%
+}
+
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header, .ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0
+}
+
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left
+}
+
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0
+}
+
+.ui-datepicker-rtl {
+  direction: rtl
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current, .ui-datepicker-rtl .ui-datepicker-group {
+  float: right
+}
+
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header, .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px
+}
+
+.ui-datepicker-cover {
+  display: none;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  filter: mask();
+  top: -4px;
+  left: -4px;
+  width: 200px;
+  height: 200px
+}
+
+.ui-datepicker th {
+  font-weight: 700;
+  color: gray
+}
+
+.ui-datepicker-today a:hover {
+  background-color: gray;
+  color: #fff
+}
+
+.ui-datepicker-today a {
+  background-color: #BFBFBF;
+  cursor: pointer;
+  padding: 0 4px;
+  margin-bottom: 0
+}
+
+.ui-datepicker td a {
+  margin-bottom: 0;
+  border: 0
+}
+
+.ui-datepicker td:hover {
+  color: #fff
+}
+
+.ui-datepicker td .ui-state-default {
+  border: 0;
+  background: 0 0;
+  margin-bottom: 0;
+  padding: 5px;
+  color: gray;
+  text-align: center;
+  filter: none
+}
+
+.ui-datepicker td .ui-state-highlight {
+  color: #fff;
+  background-color: #A90329;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+  border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0
+}
+
+.ui-datepicker td .ui-state-active {
+  color: #333;
+  background-color: #ebebeb;
+  margin-bottom: 0;
+  font-size: normal;
+  text-shadow: 0;
+  border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0
+}
+
+.ui-datepicker td .ui-state-hover {
+  color: #fff;
+  background: #428bca;
+  background-color: #428bca;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+  border-color: #357ebd;
+  border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0
+}
+
+
+.ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev {
+  text-align: center;
+  margin-top: 2px
+}
+
+.ui-datepicker-next > :first-child, .ui-datepicker-prev > :first-child {
+  text-indent: 0 !important
+}
+
+.ui-datepicker .ui-datepicker-next span, .ui-datepicker .ui-datepicker-prev span {
+  background: none !important
+}
+
+.ui-widget-content {
+  border: 1px solid #aaa;
+  background: #fff;
+  color: #404040;
+  z-index: 2!important;
+}
+
+/*Datepicker*/
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+  padding: 8px !important;
+  line-height: 1.42857143 !important;
+ vertical-align: middle !important;
+  border-top: 0px solid !important;
+}
+
+/*body,html {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}*/
+
+legend{
+ width: auto!important;
+}
+
+
+/* Required field START */
+
+.required-field-block {
+  position: relative;
+}
+
+.required-field-block .required-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -0.25em 0.25em 0em;
+  background-color: #E8E8E8;
+  border-color: #E8E8E8;
+  padding: 0.5em 0.8em;
+  color: rgba(0, 0, 0, 0.65);
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 0.325em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.1s linear;
+  -moz-transition: background 0.1s linear;
+  transition: background 0.1s linear;
+  font-size: 75%;
+}
+
+.required-field-block .required-icon {
+  background-color: transparent;
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  z-index: 10;
+  margin: 0em;
+  width: 30px;
+  height: 30px;
+  padding: 0em;
+  text-align: center;
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.required-field-block .required-icon:after {
+  position: absolute;
+  content: "";
+  right: 1px;
+  top: 1px;
+  z-index: -1;
+  width: 0em;
+  height: 0em;
+  border-top: 0em solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 0em solid transparent;
+  border-right-color: inherit;
+  -webkit-transition: border-color 0.2s ease;
+  -moz-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+
+.required-field-block .required-icon .text {
+  color: #B80000;
+  font-size: 26px;
+  margin: -3px 0 0 12px;
+}
+/* Required field END */
+.required label {
+  font-weight: bold;
+}
+.required label:before {
+  color: #e32;
+  content: ' *';
+  display:inline;
+}
+/* CSS used here will be applied after bootstrap.css */
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.large-Modal .modal-dialog{
+  width:78%;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 18%;
+}
+
+
+
+
+.download {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  width: 160px;
+  z-index: 902;
+  background: #337ab7;
+}
+
+.download>span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 33px;
+  width: 30px;
+  border-radius: 5px 0 0 5px;
+  background: #337ab7;
+  /*#F1DA91*/
+  padding: 2px;
+  text-align: center;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.download>span i {
+  font-size: 17px;
+}
+.txt-color-white {
+  color: #fff!important;
+}
+
+.handle-n {
+  height: 2px!important;
+}
+
+.cg-busy-default-wrapper{
+  top: 45% !important;
+}
+
+.cg-busy-default-sign{
+  border-radius: 7px;
+}
+
+.cg-busy-loading-container{
+  width:100%;
+  height:100%;
+}
+.tooltip-inner {
+   max-width: 200px;
+   padding: 3px 8px;
+   color: #fff;
+   text-align: center;
+   background-color: #a94442!important;
+   /* red */
+   border-radius: 4px;
+ }
+
+
+.tooltip-bottom  {
+	top: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-bottom-color: #a94442!important;
+	/* red */
+	border-width: 0 5px 5px;
+}
+
+.tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #a94442!important;
+  /* red */
+  border-width: 0 5px 5px;
+}
+
+.custom-tip > a .tooltip-inner{
+  background-color: black!important;
+}
+
+.custom-tip > a  .tooltip-bottom{
+  border-bottom-color: black!important;
+}
+
+.custom-tip > a  .tooltip-arrow{
+   border-bottom-color: black!important;
+}
+
+.download > span .tooltip-inner{
+  background-color: black!important;
+}
+
+.download > span .tooltip-bottom{
+  background-color: black!important;
+}
+.download > span .tooltip-arrow{
+  border-bottom-color: black!important;
+}

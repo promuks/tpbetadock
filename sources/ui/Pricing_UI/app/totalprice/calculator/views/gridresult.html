@@ -1,0 +1,62 @@
+
+
+<div  class="clearfix container-fluid"  ng-controller="CalculatorGridController as vmgr">
+  <!--<fieldset style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; clear: both; margin-top: 15px; border-top-color: #82b1d2; border-right-color: #82b1d2; border-bottom-color: #82b1d2; border-left-color: #82b1d2; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">
+    <!--<legend style="font-size: 14px;font-weight:bold;border-bottom: 0px;margin-bottom: 0px;border-top-color: #82b1d2;">Select Fare Classes </legend>-->
+
+      <div class="row" >
+
+          <div class="col-md-5">
+            <fieldset style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 30px; clear: both; margin-top: 15px; border-top-color: #82b1d2; border-right-color: #82b1d2; border-bottom-color: #82b1d2; border-left-color: #82b1d2; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">
+                    <legend style="font-size: 14px;font-weight:bold; background-color: rgb(255, 255, 255);border-bottom: 0px;margin-bottom: 0px;">Available </legend>
+                      <div style="padding-left:20px;padding-top:15px;width:100%;height:100%;padding-bottom: 15px;" id="mainGrid" >
+                      </div>
+              </fieldset>
+          </div>
+
+
+
+          <div class="col-md-1" style="margin-top:15%;">
+            <div  class="custom-tip" style="margin-top:50%;margin-left:30%;vertical-align:middle;position: relative;transform: translateZ(-50%);">
+            <!--<fieldset class="vertical-center" style="align-self:center;padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; clear: both; margin-top: 15px; border-top-color: #82b1d2; border-right-color: #82b1d2; border-bottom-color: #82b1d2; border-left-color: #82b1d2; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">-->
+                    <a href="" onclick="moveRowsToTarget();"  class="btn btn-xs btn-primary btn-circle">
+                      <i class="glyphicon glyphicon-chevron-right" data-placement="right" tooltip title="Move Rows To Selected"></i>
+                    </a>
+            </div>
+            <div  class="custom-tip" style="margin-top:20%;vertical-align:middle;margin-left:30%;position: relative;transform: translateZ(-50%);">
+                    <a href="" onclick="moveRowsToSource();"  class="btn btn-xs btn-primary btn-circle" >
+                      <i class="glyphicon glyphicon-chevron-left" data-placement="right" tooltip title="Move Rows To Available"></i>
+                    </a>
+         <!--</fieldset>-->
+              </div>
+        </div>
+
+        <div class="col-md-5">
+         <fieldset style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 30px; clear: both; margin-top: 15px; border-top-color: #82b1d2; border-right-color: #82b1d2; border-bottom-color: #82b1d2; border-left-color: #82b1d2; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">
+              <legend style="font-size: 14px;font-weight:bold;background-color: rgb(255, 255, 255);border-bottom: 0px;margin-bottom: 0px;">Selected </legend>
+              <div style="padding-left:20px;padding-top:15px;width:100%;height:100%;padding-bottom: 15px;" id="detailGrid" >
+              </div>
+          </fieldset>
+        </div>
+
+    </div>
+   <!-- <div class="clearfix col-md-8" style="padding-left:20px;width:99%;text-align:center;" >
+      <a ui-sref="root.tpcalc.marketsgraphs" class="btn btn-w-md btn-gap-v btn-round btn-primary">Plot Chart
+      </a>
+
+    </div> -->
+    <div class="modal-footer">
+      <a ui-sref="root.tpcalc.marketsgraphs" class="btn btn-w-md btn-gap-v btn-round btn-primary">Graph Selected
+      </a>
+      <a href="#" ng-click="$close();" class="btn btn-w-md btn-gap-v btn-round btn-primary">Cancel
+      </a>
+    </div>
+  <!--</fieldset> -->
+</div>
+
+
+
+
+
+
+

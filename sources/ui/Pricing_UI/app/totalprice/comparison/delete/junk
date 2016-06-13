@@ -1,0 +1,22 @@
+
+    // START: TPC SEARCH View //
+    .state('root.tpcalc.searchtp', {
+      url: '/searchtp',
+      templateUrl: 'totalprice/calculator/views/searchTP.html',
+      controller: 'CalculatorSearchController',
+      controllerAs: 'vms'
+    })
+  // END: TPC SEARCH View //
+    // START: TPC RESULT View //
+    .state('root.tpcalc.resulttp', {
+      url: '/resulttp',
+      templateUrl: 'totalprice/calculator/views/resulttp.html',
+      controller: 'CalculatorGraphController',
+      controllerAs: 'vmg'
+    })
+    .state('root.tpcalc.gridresulttp', {
+      url: '/gridresulttp',
+      templateUrl: 'totalprice/calculator/views/gridresulttp.html'
+
+    })
+  // END: TPC RESULT View //

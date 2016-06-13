@@ -1,0 +1,126 @@
+<div class="container-fluid">
+
+  <div ui-view>
+
+    <div id="search">
+      <form name="searchForm" role="form" focus-error="true"  xt-form ng-submit="vms.submitSearch(searchForm)" strategy="customStrategy"  novalidate>
+
+        <!-- Main Row :START -->
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-3">
+            <div class="form-group  field" >
+              <label ng-show="vms.tpcRequest.owrt" class="show-hide">OW/RT</label>
+              <select style="border-bottom: 1px solid #ccc; border-radius: 4px;" class="form-control" ng-model="vms.tpcRequest.owrt"
+                      ng-options="optionName.name for optionName in  vms.owrtOptions track by optionName.value">
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group inner-addon right-addon field">
+              <label ng-show="vms.tpcRequest.firstTravelDate" class="show-hide">First Travel</label>
+              <i class="fa fa-calendar"></i>
+              <input type="text" data-date-format="ddMy" form-name="searchForm" name="firstTravelDate"
+                     placeholder="First Travel"
+                     class="form-control datepicker" pattern="^(\d){2}[A-Za-z]{3}(\d){2}$"
+                     smart-datepicker ng-model="vms.tpcRequest.firstTravelDate">
+            </div>
+          </div>
+
+          <div class="col-md-3">
+
+              <div class="form-group<!-- inner-addon right-addon--> field ">
+                <label ng-show="vsm.tpcRequest.travelDuration" class="show-hide">Travel Duration</label>
+                <!--<i class="fa fa-rocket"></i>-->
+                <input type="number" class="form-control" ng-model="vms.tpcRequest.travelDuration" placeholder="Travel Duration"
+                       xt-validation-tooltip  min="1" max="7" name="travelDuration" capitalize>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="form-group <!--inner-addon right-addon--> field ">
+                <label ng-show="vms.tpcRequest.shopperDuration" class="show-hide">Shopper Duration</label>
+                <!--<i class="fa fa-shopping-cart"></i>-->
+                <input type="number" class="form-control" ng-model="vms.tpcRequest.shopperDuration" placeholder="Shopper Duration"
+                       xt-validation-tooltip  min="1" max="180" name="shopperDuration" capitalize>
+              </div>
+          </div>
+
+        </div>
+        <!-- Main Row :END -->
+
+
+        <!-- Extended Search: START -->
+        <div ng-repeat="search in vms.tpcRequest.tpcSubRequests"  style="margin-left: 0px; padding: 0">
+          <ng-form name="extendForm_{{$index}}">
+            <div class="row">
+              <div class="col-md-3">
+                <div style="margin-top:15px;" >
+                  <div class="form-group <!--inner-addon right-addon--> field ">
+                    <label ng-show="search.origin" class="show-hide">Origin</label>
+                    <!--<i class="fa fa-crosshairs"></i>-->
+                    <input type="text" class="form-control" ng-model="search.origin" placeholder="Origin"
+                           xt-validation-tooltip form-name="extendForm_{{$index}}"  required name="origin" capitalize>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div style="margin-top:15px;" >
+                  <div class="form-group <!--inner-addon right-addon--> field">
+                    <label ng-show="search.destination" class="show-hide">Destination</label>
+                    <!--<i class="fa fa-map-marker"></i>-->
+                    <input type="text" name="destination" class="form-control" ng-model='search.destination'
+                           xt-validation-tooltip   required placeholder="Destination" capitalize>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div style="margin-top:15px;">
+                  <div style="padding-bottom: 0;" class="form-group <!--inner-addon right-addon--> field">
+                    <label ng-show="search.carriers" class="show-hide">Carrier</label>
+                    <!--<i class="fa fa-plane"></i>-->
+                    <input type="text" class="form-control" name="carrier_{{$index}}"
+                           ng-model='search.carriers'
+                           xt-validation-tooltip  required placeholder="Carrier" capitalize >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div style="margin-top:15px;" >
+                  <div style="padding-bottom: 0;" class="form-group <!--inner-addon right-addon--> field">
+                    <label ng-show="search.fareClasses" class="show-hide">Fare Class</label>
+                    <!--<i class="fa fa-plane"></i>-->
+                    <input type="text" class="form-control" name="fareClasses_{{$index}}" ng-model='search.fareClasses'
+                           placeholder="Fare Class" capitalize>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-1" style="margin-top: 20px">
+                <a href="" ng-click="vms.addSearchRow()" class="btn btn-xs btn-primary btn-circle">
+                  <i class="glyphicon glyphicon-plus" data-placement="right" tooltip title="Add Markets"></i>
+                </a>
+                <a href="" ng-show="vms.tpcRequest.tpcSubRequests.length>1" ng-click="vms.deleteSearchRow($index)" class="btn btn-xs btn-primary btn-circle"><i class="glyphicon glyphicon-remove" data-placement="right" tooltip title="Remove Markets"></i></a>
+              </div>
+            </div> <!-- end Labels Row -->
+          </ng-form>
+        </div>
+        <!-- Extended Search: END -->
+
+        <!-- submit button:START -->
+        <div>
+
+          <a ui-sref="root.tpcalc.resulttp" ng-disabled="searchForm.$invalid" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="vms.submitSearch(searchForm)">Get Data <span class="glyphicon glyphicon-circle-arrow-right"></span>
+          </a>
+
+        </div>
+        <!-- submit button:END -->
+        <br/>
+
+
+      </form>
+    </div><!-- end ng-controller-->
+  </div>
+
+</div>

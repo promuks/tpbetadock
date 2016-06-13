@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Grid>
+  <!-- Start Confirguration Settings -->
+  <Cfg Code="GTACFEHEBNXADB"/>
+ <Cfg Paging="0" SuppressCfg="0" AllPages="1" FilterLap = "1"/>
+  <Cfg NoPager ="1"/>
+  <Cfg Style="Query"/>
+  <Cfg id="detailGrid"/>
+
+  <Cfg MaxHeight="1" MaxWidth='1' ConstWidth="0" ConstHeight='0' />
+  <Cfg ResizingMain='0'/>
+
+  <Cfg SuppressMessage='2'/>
+  <Cfg FilterEmpty='2'/>
+  <!--Restricts the user from editing any of the cells within the Grid (with exception of the search/filter sections) -->
+  <Cfg Editing="0"/>
+  <!--Restricts the user from moving columns within the Grid -->
+  <Cfg ColMoving="0"/>
+
+  <!-- To hide the text box shown above the grid -->
+  <Cfg TabStop="0"/>
+  <Cfg SortIcons='1'/>
+  <Panel Visible='0' CanHide='0'/>
+
+  <Cfg Sort="market,cabinType,fareclass"/>
+
+
+  <Actions OnClickCell="SelectRow"/>
+  <Actions OnRightClick="SelectRow" OnDblClick ="SelectRow" />
+
+
+  <Cols>
+
+    <C Name="market" Width="120" Type="Text" CanSort="1" CanFilter="1" Tip='Market' CaseSensitive='0' Format='|2|'/>
+    <C Name="cabinType" Width="100" Type="Text" CanSort="1" CanFilter="1" Tip='Cabin Type' CaseSensitive='0' Format='|2|'/>
+    <C Name="fareclass" Width="120" Type="Text" CanSort="1" CanFilter="1" Group='5' Tip='Fare Class' CaseSensitive='0' Format='|2|'/>
+  </Cols>
+
+  <Head>
+    <Header Spanned="1" rowNumber="" Align="Center" SortIcons="0"
+            market=''
+            cabinType=""
+            fareclass=""
+
+      />
+
+    <Header id="Header"
+            market="Market"
+            cabinType="Cabin Type"
+            fareclass="Fare Class"
+      />
+
+    <Filter id='tpCalculatorDetailFilter' NoColorState='1' Height="30"
+            marketButton='Defaults' marketDefaults='{Position:{Align:"below center"},Items:[{Name:"*FilterOff"},"-",{Columns:1,Items:"|*RowsAll"}]}' marketShowMenu='0' marketRange='1'
+            cabinTypeButton='Defaults' cabinTypeDefaults='{Position:{Align:"below center"},Items:[{Name:"*FilterOff"},"-",{Columns:1,Items:"|*RowsAll"}]}' cabinTypeShowMenu='0' cabinTypeRange='1'
+            fareclassDefaultFilter="7" fareClassShowMenu="1" fareClassMenuItems='0,1,2,7,8,9,10,11,12' fareclassDefaults='{Position:{Align:"below center"},Items:[{Name:"*FilterOff"},"-",{Columns:1,Items:"|*RowsAll"}]}'  fareclassTip="You should either start with an Alphabet or a Hyphen"
+      />
+
+
+  </Head>
+
+  <Pager Visible="0" />
+
+
+  <Toolbar id='tpCalcDetailToolBar' CanFocus='0' Space='0' Link='0' ColumnsTip='Select Columns to Display' ExportTip="Download" Cells='SELECT_ALL,CLEAR'
+           IMAGETip="Html type using &amp;lt;img> 'tags and other content"
+           SELECT_ALL_FILTER="Html" SELECT_ALL="&lt;input class='btn btn-w-xs btn-gap-v btn-round btn-primary' type='button'  value='Select All' onclick='selectAllDetailRows();'/&gt;"
+           CLEAR_FILTER="Html" CLEAR="&lt;input type='button' class='btn btn-w-xs btn-gap-v btn-round btn-primary' value='Clear' onclick='ClearDetailSelection();'/&gt;"
+    />
+
+</Grid>

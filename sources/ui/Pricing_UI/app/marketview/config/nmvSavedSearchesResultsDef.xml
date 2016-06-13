@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<Grid>
+  <!-- Start Confirguration Settings -->
+  <!-- Configuration is not saved to cookies -->
+  <Cfg Code="GTACFEHEBNXADB"/>
+  <Cfg Style="Borders"/>
+  
+
+  
+  <Cfg id='SavedSearches' SuppressCfg='1'/>
+  <!-- Grid can reload and automatically discard pending changes -->
+  <Cfg ReloadChanged='1'/>
+  <!-- Undo / redo is supported, Ctrl+Z / Ctrl+Y -->
+  <Cfg Undo='1'/>
+  <!-- Grid produces no informational message -->
+  <Cfg SuppressMessage='2'/>
+  <!-- Grid is sorted according to column A by default -->
+  <Cfg FilterEmpty='2'/>
+   <!-- Grid will always fill its main tag -->
+  <Cfg MaxHeight="1" ConstHeight='0' /> 
+  <!-- User can resize grid main tag -->
+  <Cfg ResizingMain='0'/>
+  <!-- Export setting, all rows will be exported expanded and will be used Excel outline -->
+  <Cfg ExportType='Expanded,Outline'/>
+  <!-- Recalculates rows after selection changed -->
+  <Cfg CalculateSelected='1'/>
+  <!-- Let a user to choose which columns will be printed and shows print options -->
+  <Cfg PrintCols='2'/>
+  <!-- Let a user to choose which columns will be exported and shows export options -->
+  <Cfg ExportCols='2'/>
+  <!-- Let a user to choose which columns will be printed to PDF and shows print PDF options -->
+  <Cfg ExportPDFCols='2'/>
+  <!-- Let a user to choose which style to default to -->
+  <Cfg Style='Borders'/>
+  <!--Maximal count of columns according to grid can be sorted. -->
+  <Cfg MaxSort='6'/>
+  <!--How a user can set sorting and icons are displayed in all headers: 
+          0 – hides icons and sorts ascent by click to cell, descent by double click
+          1 – shows icons and sorts ascent by click to cell, descent by double click
+          2 – sorts by click to icon only, bottom icon ascent, upper icon descent
+          3 – sorts by click to cell, bottom part ascent, upper part descent-->
+  <Cfg Sort='B,C,D,E,F,G'/>
+  <!--  -->
+  <Cfg SortIcons='1'/>
+  <!--Restricts the user from editing any of the cells within the Grid (with exception of the search/filter sections) -->
+  <Cfg Editing='0'/>
+  <!--Restricts the user from moving columns within the Grid -->
+  <Cfg ColMoving='1' />
+  <!-- Shows dragged object under mouse cursor -->
+  <Cfg ShowDrag='1'/>
+  <!-- Fill the whole main tag by grid content  -->
+    <!-- <Cfg ConstHeight='1'  ConstWidth='1'/>-->
+  <!-- Alternate Row colors  Highlight odd or every N row by another color or class. 0 – no row, 1 – every row, 2 – every odd row, every third row, 3 – every fourth row, ... By default it uses the Alternate color defined in the actual style in Grid.css. -->
+  <Cfg Alternate='2' />
+
+    <Cfg  Selecting="1" />
+  <!-- End Configuration Settings -->
+  <Actions OnClickCell="ClearSelection,FocusEdit" OnClickOutside="ClearSelection,Blur"/>
+<Actions OnRightClick="SelectRowF" OnDblClick ="SelectRowF" />
+  
+   
+
+  <!-- Hide the Panel (Select and Delete buttons) located to the left of the gird -->
+  <Panel Visible='0' CanHide='0'/>
+  <!-- Column definition -->
+  <Cols>
+    <!-- Row Number -->
+	<C Name='searchId' Width="20" Type='Text' CanFilter='0' CanSearch='0' CanSort='1' CanHide='0' CanMove='0'  Hidden='1'  Visible='0'/>
+  	
+	<C Name='organization' Width="110" Type='Text'  CanSort='1' CanFilter='2' CanEdit='0' CanHide='1' CanSearch='0' CaseSensitive='0' Format='|2|' Tip='Organization'  CanMove='1'/>
+ 
+    <!-- Name -->
+    <C Name='name' Width="150" Type='Text' CanSort='1' CanFilter='2' CanEdit='0' CanHide='1' CanSearch='0' Tip='Name' CaseSensitive='0' Format='|2|' CanMove='1'/>
+    <!-- Description -->
+    <C Name='description' Width="260" Type='Text' CanSort='1' CanFilter='2' CanEdit='0' CanHide='1' CanSearch='0' CaseSensitive='0' Format='|2|' Tip='Description'  CanMove='1'/>
+    <!-- Date Created -->
+    <C Name='createdDate' Width="110" Type='Date' CanFilter='2' CanSearch='0' CanMove='1' AutoCalendar='1' CaseSensitive='0' Tip='Created Date' Format='ddMMMyy'/>
+     <!-- Time Created -->
+    <C Name='createdTime' Width="90" Type='Text' CanFilter='2' CanSearch='0' CanMove='1' CaseSensitive='0' Tip='Created Time'/>
+    <!-- Created by User -->
+    <C Name='createdBy' Width="120" Type='Text' CanSort='1' CanFilter='2' CanEdit='0' CanHide='1' CanSearch='0' CaseSensitive='0' Format='|2|' Tip='Created by User'  CanMove='1'/>
+    <!-- Date Last Run -->
+    <C Name='dateLastRun' Width="110" Type='Date' CanFilter='2' CanSearch='0' CanMove='1' AutoCalendar='1' CaseSensitive='0' Tip='Date Last Run' Format='ddMMMyy'/>
+    <!-- Time Last Run -->
+    <C Name='timeLastRun' Width="120" Type='Text' CanFilter='2' CanSearch='0' CanMove='1' CaseSensitive='0' Tip='Time Last Run'/>
+    <!-- Last Run by User -->
+	<C Name='lastRunBy' Width="120" Type='Text' CanSort='1' CanFilter='2' CanEdit='0' CanHide='1' CanSearch='0' CaseSensitive='0' Format='|2|' Tip='Last Run by User'  CanMove='1'/>
+	 </Cols>
+  <!-- Column captions -->
+  <Head>
+	<Header id='Header' searchId="Id"  organization="Organization" name="Name" description="Description" createdDate="Date Created" createdTime="Time Created" createdBy="Created by User" dateLastRun="Date Last Run" timeLastRun="Time Last Run" lastRunBy="Last Run by User"/>
+    <!-- Filter row -->
+    <Filter id='SavedSearchFilter' NoColorState='1'
+         XCanEdit='1' XType='Bool'
+         organizationShowMenu="1"   organizationRange='1' organizationMenuItems='0,1,2' organizationDefaultFilter='1'
+         nameShowMenu="1"   nameRange='1'  nameMenuItems='0,1,2' nameDefaultFilter='1' 
+         descriptionShowMenu="1"   descriptionRange='1'  descriptionMenuItems='0,1,2' descriptionDefaultFilter='1' 
+         createdDateShowMenu="1"   createdDateRange='1' createdDateMenuItems='0,1,2' createdDateDefaultFilter='1' 
+         createdTimeShowMenu="1"   createdTimeRunRange='1' createdTimeMenuItems='0,1,2' createdTimeDefaultFilter='1'
+		 createdByShowMenu="1"   createdByRange='1'  createdByMenuItems='0,1,2' createdByDefaultFilter='1' 
+		 dateLastRunShowMenu="1"   dateLastRunRange='1' dateLastRunMenuItems='0,1,2'  dateLastRunDefaultFilter='1'    
+		 timeLastRunShowMenu="1"   timeLastRunRange='1' timeLastRunMenuItems='0,1,2' timeLastRunDefaultFilter='1'
+	  	 lastRunByShowMenu="1"   lastRunByRange='1' lastRunByMenuItems='0,1,2' lastRunByDefaultFilter='1' 
+    />
+  </Head>
+  <!-- Toolbar -->
+  <Toolbar Space='0' Link='0' Kind='Topbar' Cells='Reload,Columns'/>
+</Grid>

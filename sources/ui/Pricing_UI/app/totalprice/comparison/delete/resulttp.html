@@ -1,0 +1,105 @@
+<div  class="container-fluid" style="border: solid;border-color: #002a80">
+
+  <div id="search">
+    <div class="row">
+
+      <div class="col-md-5">
+        <div class="field form-group" style="margin-top: 15px">
+          <label ng-show="vmg.tpcGraphFilters.odcList" class="show-hide">Markets</label>
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.odcOptionstp"
+            output-model="vmg.tpcGraphFilters.odcListtp"
+            button-label="label"
+            item-label="label"
+            tick-property="selected"
+            helper-elements="all none"
+            max-labels="3"
+            >
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="field form-group" style="margin-top: 15px">
+          <label ng-show="vmg.tpcGraphFilters.amounts" class="show-hide">Amounts</label>
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.amountOptions"
+            output-model="vmg.tpcGraphFilters.amounts"
+            button-label="name"
+            item-label="name"
+            helper-elements="none"
+            tick-property="selected"
+            selection-mode="single"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="field form-group" style="margin-top: 15px">
+          <label class="show-hide">Cabin Types</label>
+
+<!--          <div ng-dropdown-multiselect="" selected-model="vmg.tpcGraphFilters.cabinList"
+               extra-settings="vmg.tpcGraphFilters.cabinSettings"  events="{onItemSelect: vmg.updateGraph,onItemDeselect: vmg.updateGraph}"
+               options="vmg.tpcGraphFilters.cabinOptions" ng-model="vmg.tpcGraphFilters.cabinList">
+          </div>-->
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.cabinOptions"
+            output-model="vmg.tpcGraphFilters.cabinList"
+            button-label="label"
+            item-label="label"
+            helper-elements="none"
+            tick-property="selected"
+            selection-mode="single"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="field form-group" style="margin-top: 15px">
+          <label class="show-hide">Operation Type</label>
+
+<!--          <div ng-dropdown-multiselect="" selected-model="vmg.tpcGraphFilters.opList"
+               extra-settings="vmg.tpcGraphFilters.opSettings"  events="{onItemSelect: vmg.updateGraph,onItemDeselect: vmg.updateGraph}"
+               options="vmg.tpcGraphFilters.opOptions" ng-model="vmg.tpcGraphFilters.opList">
+          </div>-->
+          <div
+            isteven-multi-select
+            input-model="vmg.tpcGraphFilters.opOptions"
+            output-model="vmg.tpcGraphFilters.opList"
+            button-label="label"
+            item-label="label"
+            helper-elements="none"
+            tick-property="selected"
+            selection-mode="single"
+            >
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <div  style="margin-top: 15px">
+          <a ui-sref="root.tpcalc.gridresulttp" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="vmg.customViewSelection(searchForm)">  <span class="glyphicon glyphicon-circle-arrow-right"></span>
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+
+    <div>
+      <highchart id="chart1" config="vmg.summaryChartConfig"></highchart>
+    </div>
+<!--    <div ng-show="vm.showDailyGraph()">
+      <highchart id="chart2" config="vmg.daysChartConfig"></highchart>
+    </div>-->
+
+
+
+
+  </div><!-- end ng-controller-->
+</div>

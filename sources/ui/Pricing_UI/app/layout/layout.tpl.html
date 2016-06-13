@@ -1,0 +1,28 @@
+<!-- Header : Header area -->
+<header class="header" id="header">
+  <div ui-view="header"></div>
+</header>
+<!-- END Header -->
+
+
+
+
+<!-- MAIN PANEL -->
+<div>
+  <!-- Left panel : Navigation area -->
+  <!-- Note: This width of the aside area can be adjusted through LESS variables -->
+  <div ui-view="navigation" ></div>
+  <!-- END NAVIGATION -->
+  <!-- Main Content -->
+  <div id="main" ng-style="style()" fm-resize ui-view ></div>
+  <!-- END Main Content  -->
+</div>
+<!-- END MAIN PANEL -->
+
+<!-- PAGE FOOTER -->
+<footer class="footer">
+  <div ui-view="footer"></div>
+</footer>
+<!-- END PAGE FOOTER -->
+
+

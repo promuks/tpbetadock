@@ -1,0 +1,158 @@
+<!-- <div class="container-fluid">
+
+  <div ui-view> -->
+
+    <div id="search" style="margin-top: 30px; margin-left: 10px;">
+      <form name="searchForm" role="form" focus-error="true"  xt-form  strategy="customStrategy"  novalidate>
+
+        <!-- Main Row :START -->
+		<div class="row" style="margin-right: 10px;">
+
+			<div class="col-md-3">
+				<div class="form-group inner-addon right-addon field">
+					<label class="show-hide">Effective Date</label> <i
+						class="fa fa-calendar"></i> <input type="text"
+						data-date-format="ddMy" form-name="searchForm" name="inEffectOn"
+						placeholder="Effective Date" class="form-control datepicker"
+						pattern="^(\d){2}[A-Za-z]{3}(\d){2}$" smart-datepicker
+						ng-model="vms.mktRequest.inEffectOn">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group inner-addon right-addon field">
+					<label class="show-hide">Time</label> <i class="fa fa-clock-o"></i>
+          <input class="form-control" data-smart-timepicker type="text" placeholder="Select time" ng-model="vms.mktRequest.time" >
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="form-group inner-addon right-addon field">
+					<label class="show-hide">First Travel Date</label> <i
+						class="fa fa-calendar"></i> <input type="text"
+						data-date-format="ddMy" form-name="searchForm"
+						name="travelDateBefore" placeholder="First Travel Date"
+						class="form-control datepicker"
+						pattern="^(\d){2}[A-Za-z]{3}(\d){2}$" smart-datepicker
+						ng-model="vms.mktRequest.travelDateBefore">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group inner-addon right-addon field">
+					<label class="show-hide">Last Travel Date</label> <i
+						class="fa fa-calendar"></i> <input type="text"
+						data-date-format="ddMy" form-name="searchForm"
+						name="travelDateAfter" placeholder="Last Travel Date"
+						class="form-control datepicker"
+						pattern="^(\d){2}[A-Za-z]{3}(\d){2}$" smart-datepicker
+						ng-model="vms.mktRequest.travelDateAfter">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group inner-addon right-addon field">
+					<label class="show-hide">First Sale Date</label> <i
+						class="fa fa-calendar"></i> <input type="text"
+						data-date-format="ddMy" form-name="searchForm"
+						name="saleDateBefore" placeholder="First Sale Date"
+						class="form-control datepicker"
+						pattern="^(\d){2}[A-Za-z]{3}(\d){2}$" smart-datepicker
+						ng-model="vms.mktRequest.saleDateBefore">
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="form-group inner-addon right-addon field">
+					<label class="show-hide">Last Sale Date</label> <i
+						class="fa fa-calendar"></i> <input type="text"
+						data-date-format="ddMy" form-name="searchForm"
+						name="saleDateAfter" placeholder="Last Sale Date"
+						class="form-control datepicker"
+						pattern="^(\d){2}[A-Za-z]{3}(\d){2}$" smart-datepicker
+						ng-model="vms.mktRequest.saleDateAfter">
+				</div>
+			</div>
+
+		</div>
+		<!-- Main Row :END -->
+
+        <!-- Extended Search: START -->
+        <div ng-repeat="search in vms.mktRequest.mktSubRequests"  style="margin-left: 0px; padding: 0">
+          <ng-form name="extendForm_{{$index}}">
+            <div class="row">
+
+            <div class="col-md-2">
+             <div style="margin-top:15px;" >
+            <div class="form-group  field required" >
+              <label   class="show-hide">Product Type</label>
+              <select style="border-bottom: 1px solid #ccc; border-radius: 4px;" class="form-control" ng-model="vms.mktRequest.productTypeList"
+                      ng-options="optionName.name for optionName in  vms.productTypeOptionList track by optionName.value">
+              </select>
+            </div>
+          </div>
+         </div>
+
+              <div class="col-md-2">
+                <div style="margin-top:15px;" >
+                  <div class="form-group <!--inner-addon right-addon--> field required">
+                    <label   class="show-hide">Origin</label>
+                    <!--<i class="fa fa-crosshairs"></i>-->
+                    <input type="text" class="form-control" ng-model="search.origin" placeholder="Origin"
+                           xt-validation-tooltip form-name="extendForm_{{$index}}"  required name="origin" capitalize>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div style="margin-top:15px;" >
+                  <div class="form-group <!--inner-addon right-addon--> field required">
+                    <label  class="show-hide">Destination</label>
+                    <!--<i class="fa fa-map-marker"></i>-->
+                    <input type="text" name="destination" class="form-control" ng-model='search.destination'
+                           xt-validation-tooltip   required placeholder="Destination" capitalize>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div style="margin-top:15px;">
+                  <div style="padding-bottom: 0;" class="form-group <!--inner-addon right-addon--> field required">
+                    <label  class="show-hide">Carrier</label>
+                    <!--<i class="fa fa-plane"></i>-->
+                    <input type="text" class="form-control" name="carrier_{{$index}}"
+                           ng-model='search.carriers'
+                           xt-validation-tooltip  required placeholder="Carrier" capitalize >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="margin-top: 15px">
+      			<div class="pull-right"><a class="btn btn-primary" ng-click="open(search)" href="javascript:void(0);"><i
+      				  class="fa fa-folder-open"></i> More</a></div>
+  			  </div>
+
+               <div class="col-md-2" style="margin-top: 15px">
+                <a href="" ng-click="vms.addSearchRow()" class="btn btn-xs btn-primary btn-circle">
+                  <i class="glyphicon glyphicon-plus" data-placement="right" tooltip title="Add Markets"></i>
+                </a>
+                 <a href="" ng-click="vms.copySearchRow(search)" class="btn btn-primary btn-circle"><i class="fa fa-copy"></i></a>
+                <a href="" ng-show="vms.mktRequest.mktSubRequests.length>1" ng-click="vms.deleteSearchRow($index)" class="btn btn-xs btn-primary btn-circle"><i class="glyphicon glyphicon-remove" data-placement="right" tooltip title="Remove Markets"></i></a>
+              </div>
+            </div> <!-- end Labels Row -->
+          </ng-form>
+        </div>
+        <!-- Extended Search: END -->
+
+        <!-- submit button:START -->
+        <div>
+          <a ui-sref="root.tpcalc.result" ng-disabled="searchForm.$invalid" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="vms.logSelection(searchForm)">Search
+          </a>
+
+        </div>
+        <!-- submit button:END -->
+        <br/>
+
+
+      </form>
+    </div><!-- end ng-controller-->
+ <!--  </div>
+
+</div>
+ -->

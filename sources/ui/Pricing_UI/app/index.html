@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/validation.css">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="assets/styles/sidebar-google.css">
+    <link rel="stylesheet" href="assets/styles/isteven-multi-select.css">
+    <link rel="stylesheet" href="assets/styles/gridstercss.css">
+    <link rel="stylesheet" href="assets/styles/massautocomplete.theme.atp.css">
+     <link rel="stylesheet" href="assets/styles/validation.css">
+
+
+     <!-- endbuild -->
+  </head>
+  <body ng-app="app" fm-on-unload>
+    <!--    [if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
+    <![endif]-->
+
+
+    <!-- MAIN CONTENT -->
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+      <div id="ui-view" ui-view></div>
+
+
+    <script src="assets/Grid/GridE.js"></script>
+
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+        <script src="bower_components/sockjs/sockjs.js"></script>
+        <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+        <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+        <script src="bower_components/javascript-detect-element-resize/detect-element-resize.js"></script>
+        <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
+        <script src="bower_components/toastr/toastr.js"></script>
+        <script src="bower_components/angular-google-analytics/dist/angular-google-analytics.js"></script>
+        <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+        <script src="bower_components/ng-idle/angular-idle.js"></script>
+        <!-- endbower -->
+
+    <!--[if lt IE 9]>
+    <script src="jquery.xdomainrequest.js"></script>
+    <![endif]-->
+      <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+<!--      <script src="bower_components/angular-gridster/dist/angular-gridster.min.js"></script>-->
+      <script src="bower_components/toastr/toastr.min.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/ng-csv/build/ng-csv.min.js"></script>
+    <!-- endbuild -->
+
+      <script src="bower_components/bootstrap/js/tooltip.js"></script>
+    <!--<script src="bower_components/xtform/dist/xtForm.js"></script>-->
+
+
+      <!--[if lt IE 9]>
+      <script src="es5-shim.min.js"></script>
+      <![endif]-->
+
+    <!-- START: root app -->
+      <script src="app.js"></script>
+    <script src="config.js"></script>
+      <script src="route-config.js"></script>
+    <!-- END: root app -->
+
+    <!-- START: common -->
+      <script src="common/CapitalizeDirective.js"></script>
+      <script src="common/TooltipDirective.js"></script>
+      <script src="common/Sizeelement.js"></script>
+      <script src="common/configs.js"></script>
+      <script src="common/common.module.js"></script>
+      <script src="common/directives/massautocompleteatp.js"></script>
+      <script src="common/directives/numbersOnly.js"></script>
+      <script src="common/directives/fareClassOnly.js"></script>
+      <script src="common/directives/tpc-travelDate.directive.js"></script>
+      <script src="common/directives/xtForm.js"></script>
+      <script src="common/directives/fm-on-unload.js"></script>
+      <script src="common/services/lookupdata.service.js"></script>
+
+
+    <!-- END: common -->
+
+    <!-- START: layout configurations-->
+      <script src="layout/layout.module.js"></script>
+      <script src="layout/route-config.js"></script>
+      <script src="layout/layout.js"></script>
+    <!-- END: layout configurations-->
+
+    <!-- START: home feature configurations-->
+      <script src="home/home.module.js"></script>
+      <script src="home/route-config.js"></script>
+    <!-- END: home feature configurations-->
+
+    <!-- START: dashboard feature-->
+      <script src="dashboard/dashboard.module.js"></script>
+      <script src="dashboard/route-config.js"></script>
+    <!-- START: dashboard feature-->
+
+      <script src="assets/charts/highcharts.js"></script>
+
+    <!-- START: MV Scripts -->
+      <script src="marketview/marketview.module.js"></script>
+      <script src="marketview/route-config.js"></script>
+      <script src="marketview/constants.js"></script>
+
+	   <!-- model objects -->
+      <script src="marketview/model/nmv.request.model.js"></script>
+      <script src="marketview/model/nmv.criteria.model.js"></script>
+	  <script src="marketview/model/nmv.extsearch.model.js"></script>
+
+	<!-- model objects -->
+
+   <!-- services -->
+    <script src="marketview/services/nmv.grid.data.service.js"></script>
+    <script src="marketview/services/nmv.grid.service.js"></script>
+    <!-- services -->
+
+	 <!-- controller  objects -->
+	  <script src="marketview/controllers/nmv.search.controller.js"></script>
+	  <script src="marketview/controllers/nmv.extsearch.controller.js"></script>
+    <script src="marketview/controllers/nmv.grid.controller.js"></script>
+     <!-- controller objects -->
+
+ 	<!-- directives  objects -->
+	  <script src="marketview/directives/nmv.search.directive.js"></script>
+    <!-- directives objects -->
+
+
+
+
+    <!-- END: MV Scripts -->
+
+    <!-- START: Websockets Scripts -->
+      <script src="websockets/message.module.js"></script>
+      <script src="websockets/route-config.js"></script>
+      <script src="websockets/message.controller.js"></script>
+    <!-- END: Websockets Scripts -->
+
+    <!-- START: Total price Calc scripts   -->
+      <script src="totalprice/totalprice.module.js"></script>
+
+      <script src="totalprice/calculator/calculator.module.js"></script>
+      <script src="totalprice/calculator/constants.js"></script>
+      <script src="totalprice/calculator/services/TpcCalcGridEvents.js"></script>
+
+      <script src="totalprice/calculator/controllers/calculator.onedaygraph.controller.js"></script>
+      <script src="totalprice/calculator/services/tp.onedaygraph.config.js"></script>
+      <script src="totalprice/calculator/services/tp.onedaygraph.data.service.js"></script>
+      <script src="totalprice/calculator/services/tp.onedaygraph.service.js"></script>
+
+    <!-- model objects -->
+      <script src="totalprice/calculator/model/tp.criteria.model.js"></script>
+      <script src="totalprice/calculator/model/tp.request.model.js"></script>
+      <script src="totalprice/calculator/model/tp.summary.model.js"></script>
+      <script src="totalprice/calculator/model/tp.markets.model.js"></script>
+      <script src="totalprice/calculator/model/tp.markets.dashboard.model.js"></script>
+      <script src="totalprice/calculator/model/tp.summary.dashboard.model.js"></script>
+      <script src="totalprice/calculator/model/tp.search.response.js"></script>
+      <!-- model objects -->
+
+
+      <script src="totalprice/calculator/services/tp.pleasewait.service.js"></script>
+      <script src="totalprice/calculator/services/tp.errorMessage.service.js"></script>
+      <script src="totalprice/calculator/services/tp.helper.services.js"></script>
+      <script src="totalprice/calculator/services/tp.download.data.service.js"></script>
+      <script src="totalprice/calculator/services/tp.download.service.js"></script>
+      <script src="totalprice/calculator/controllers/calculator.controller.js"></script>
+      <script src="totalprice/calculator/controllers/calculator.search.controller.js"></script>
+      <script src="totalprice/calculator/controllers/calculator.summarygraph.controller.js"></script>
+      <script src="totalprice/calculator/controllers/calculator.marketselection.controller.js"></script>
+      <script src="totalprice/calculator/controllers/calculator.marketsgraphs.controller.js"></script>
+      <script src="totalprice/calculator/controllers/calculator.dailygraph.controller.js"></script>
+
+      <script src="totalprice/calculator/services/tp.dailygraph.config.js"></script>
+      <script src="totalprice/calculator/services/tp.dailygraph.service.js"></script>
+
+      <script src="totalprice/calculator/controllers/calculator.dashboard.controller.js"></script>
+      <script src="totalprice/calculator/services/tp.summarygraph.config.js"></script>
+      <script src="totalprice/calculator/services/tp.summarygraph.service.js"></script>
+      <script src="totalprice/calculator/services/tp.summarygraph.data.service.js"></script>
+
+      <script src="totalprice/calculator/services/tp.marketsgraphs.data.service.js"></script>
+      <script src="totalprice/calculator/services/tp.marketsgraphs.config.js"></script>
+      <script src="totalprice/calculator/services/tp.marketsgraphs.service.js"></script>
+      <script src="totalprice/calculator/services/tp.grid.service.js"></script>
+      <script src="totalprice/calculator/services/tp.grid.data.service.js"></script>
+      <script src="totalprice/calculator/services/tp.wrapper.service.js"></script>
+      <script src="totalprice/calculator/route-config.js"></script>
+      <script src="totalprice/calculator/directives/tpc-amount-select.directive.js"></script>
+      <script src="totalprice/calculator/directives/fm-resize.directive.js"></script>
+      <script src="totalprice/calculator/services/tp.auth.service.js"></script>
+      <script src="totalprice/calculator/model/calcprop.service.js"></script>
+      <script src="totalprice/calculator/services/tp.session.service.js"></script>
+    <!-- END: Total price Calc scripts   -->
+
+    <!-- START: Total price Calc scripts   -->
+      <script src="totalprice/comparison/comparison.module.js"></script>
+      <script src="totalprice/comparison/route-config.js"></script>
+      <script src="layout/header.controller.js"></script>
+    <!-- END: Total price Calc scripts   -->
+
+    <!-- START: 3rd party libs -->
+      <script src="lib/placeholders.min.js"></script>
+      <script src="lib/isteven-multi-select.js"></script>
+      <script src="lib/angular-gridster.js"></script>
+
+    <!-- END: Total price Calc scripts   -->
+
+
+    <!-- endbuild -->
+</body>
+</html>

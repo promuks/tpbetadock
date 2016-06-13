@@ -1,0 +1,32 @@
+<div id='dailygraphwidget' ng-controller="DailyGraphController as vmdg">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="field form-group" style="margin-top: 15px">
+
+
+        <label class="show-hide">Graph Options</label>
+
+        <div
+          isteven-multi-select
+          input-model="vmdg.stacked"
+          output-model="vmdg.graphOp"
+          button-label="id"
+          item-label="id"
+          helper-elements=""
+          tick-property="selected"
+          selection-mode="single"
+          on-item-click="vmdg.updateGraph(this)"
+          >
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="height:100%;width:90%;position:relative;">
+    <div>
+      <highchart id="dailygraphchart" config="vmdg.dailyChartConfig"></highchart>
+    </div>
+  </div>
+</div>
