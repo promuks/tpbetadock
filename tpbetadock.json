@@ -37,7 +37,7 @@
                   "ref": "master"
                },
                "contextDir": ""
-            },https://raw.githubusercontent.com/promuks/tpbetadock/master/tpbetadock.json
+            },
             "strategy": {
                "type": "Docker",
                "dockerStrategy": {
